@@ -31,12 +31,14 @@ function createElement(content) {
     a.innerText = content
     li.appendChild(a);
     
-    return li;
+    addElementToList(li);
   }
 }
 
-function addElementToList() {
+function addElementToList(inputElement) {
   let ul;
   ul = document.getElementById('myMenu');
-  ul.appendChild('');
+  ul.appendChild(inputElement);
 }
+
+createElement('Web Design');
