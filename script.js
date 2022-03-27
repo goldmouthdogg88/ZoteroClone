@@ -24,19 +24,19 @@ function createElement(content) {
     throw new Error('Element content must be a string');
   } else {
     
-    let li a;
+    let li, a;
     li = document.createElement('li');
     a = document.createElement('a');
     a.href = '#';
     a.innerText = content
     li.appendChild(a);
     
-    return createdElement;
+    return li;
   }
 }
 
 function addElementToList() {
   let ul;
   ul = document.getElementById('myMenu');
-  ul.appendChild('')
+  ul.appendChild('');
 }
