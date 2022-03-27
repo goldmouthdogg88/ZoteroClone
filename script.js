@@ -13,3 +13,30 @@ function myFunction() {
     }
   }
 }
+
+// <li><a href="#">Node.js</a></li>
+
+function addContentToElement(element) {
+  
+}
+function createElement(content) {
+  if (typeof(content) != 'string') {
+    throw new Error('Element content must be a string');
+  } else {
+    
+    let li a;
+    li = document.createElement('li');
+    a = document.createElement('a');
+    a.href = '#';
+    a.innerText = content
+    li.appendChild(a);
+    
+    return createdElement;
+  }
+}
+
+function addElementToList() {
+  let ul;
+  ul = document.getElementById('myMenu');
+  ul.appendChild('')
+}
