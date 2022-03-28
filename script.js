@@ -18,12 +18,18 @@ function myFunction() {
 
 function getInputFromTextBox() {
   let userInput;
-  userInput = document.getElementById('input-text-box').innerText;
-  createElement(userInput);
+  userInput = document.getElementById('text-box').value;
+  if (userInput.length > 0 && userInput != '') {
+    createElement(userInput);
+  } else {
+    throw new Error(`.text-box must not be empty`);
+  }
+  
+  
 }
 function createElement(content) {
   if (typeof(content) != 'string') {
-    throw new Error('Element content must be a string');
+    throw new Error('Element content must be a empty.');
   } else {
     
     let li, a;
