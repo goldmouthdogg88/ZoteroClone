@@ -16,8 +16,10 @@ function myFunction() {
 
 // <li><a href="#">Node.js</a></li>
 
-function addContentToElement(element) {
-  
+function getInputFromTextBox() {
+  let userInput;
+  userInput = document.getElementById('input-text-box').innerText;
+  createElement(userInput);
 }
 function createElement(content) {
   if (typeof(content) != 'string') {
@@ -42,3 +44,4 @@ function addElementToList(inputElement) {
 }
 
 createElement('Web Design');
+
