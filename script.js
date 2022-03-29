@@ -14,40 +14,40 @@ function myFunction() {
   }
 }
 
-// <li><a href="#">Node.js</a></li>
 
-function getInputFromTextBox() {
-  let userInput;
-  userInput = document.getElementById('text-box').value;
-  if (userInput.length > 0 && userInput != '') {
-    createElement(userInput);
-  } else {
-    throw new Error(`.text-box must not be empty`);
+
+function getUserInputAndClearTextBox() {
+  let userInput, ul, li, a;
+
+  // Select the DOM Element containting user input.
+  userInput = document.getElementById('text-box');
+
+  if (userInput.value == '') {
+    return;
   }
+
+
+  // create element to be appended to DOM.
   
-  
-}
-function createElement(content) {
-  if (typeof(content) != 'string') {
-    throw new Error('Element content must be a empty.');
-  } else {
-    
-    let li, a;
     li = document.createElement('li');
     a = document.createElement('a');
     a.href = '#';
-    a.innerText = content
+    a.innerText = userInput.value;
     li.appendChild(a);
-    
-    addElementToList(li);
-  }
+
+
+    // Select DOM node to pass our component
+    ul = document.getElementById('myMenu');
+    ul.appendChild(li);
+
+    console.log('removing userInput');
+    userInput.value = '';
 }
 
-function addElementToList(inputElement) {
-  let ul;
-  ul = document.getElementById('myMenu');
-  ul.appendChild(inputElement);
-}
 
-createElement('Web Design');
+
+
+
+
+
 
