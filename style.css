@@ -56,3 +56,9 @@ body {
 #myMenu li a:hover {
   background-color: #eee;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

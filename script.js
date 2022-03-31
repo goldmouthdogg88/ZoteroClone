@@ -44,10 +44,61 @@ function getUserInputAndClearTextBox() {
     userInput.value = '';
 }
 
+// helpers
 
+function convertHTMLCollection(htmlCollection) {
+  let buffer = [];
+  for (var i = 0; i < htmlCollection.length; i++) {
+    buffer.push(htmlCollection[i]);
+  }
+  return buffer;
+}
 
+function removePageData(elementClassName) {
+  let elements;
+  elements = convertHTMLCollection(document.getElementsByClassName(elementClassName));
+  elements.map((x) => x.remove());
+}
 
+function loadPageData() {
+  
 
+  
+}
 
+var content = `<div class="right" style="background-color:#ddd;">
+    <h2>Page Content</h2>
+    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some text..</p>
+  </div><div class="right" style="background-color:#ddd;">
+    <h2>Page Content</h2>
+    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some text..</p>
+  </div><div class="right" style="background-color:#ddd;">
+    <h2>Page Content</h2>
+    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some text..</p>
+  </div>`
+
+var row = document.getElementsByClassName('row')[0];
+
+frag = document.createRange().createContextualFragment(content);
+
+removePageData('right');
+row.appendChild(frag.firstChild);
+
+// Doesn't work as expected
+// refactor to correct behavior
+function loadFragmentChildren(inputFragment) {
+  for (var i = 0; i < inputFragment.childElementCount; i++) {
+    row.appendChild(frag.firstChild);
+  }
+}
 
 
